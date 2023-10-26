@@ -1,5 +1,7 @@
-FROM openjdk:8-jdk-alpine
-EXPOSE 8083
-ADD target/ski.jar  ski.jar
-#COPY target/ski.jar/ski.jar
-ENTRYPOINT ["java", "-jar", "/ski.jar"]
+# Exposez un port
+EXPOSE 8080
+
+# Copiez les fichiers de votre application dans le conteneur
+ADD target/gestion-station-ski-1.0.jar /app/gestion-station-ski-1.0.jar
+# Commande d'exécution
+CMD ["java", "-jar", "/app/gestion-station-ski-1.0.jar"]

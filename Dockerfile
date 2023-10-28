@@ -1,14 +1,20 @@
-# Utilisez une image de base appropriée
-FROM openjdk:8-jdk-alpine
+# Utilisez une image de base Alpine Linux avec curl
+FROM alpine
 
-# Exposez le port 8080 pour l'application
+# Installez curl
+RUN apk --no-cache add curl
+
+# Exposez un port
 EXPOSE 8080
 
-# Créez le répertoire /app dans le conteneur
+# Créez un répertoire pour votre application
 RUN mkdir /app
 
-# Copiez le fichier jar dans le conteneur
-COPY ./target/gestion-station-ski-1.0.jar /app/gestion-station-ski-1.0.jar
+# Utilisez curl pour télécharger le fichier JAR depuis Nexus
+RUN curl -o /app/ski.jar http://192.168.1.3:8081/tn/esprit/rh/ski/1.0/ski-1.0.jar
 
-# Commande d'exécution pour lancer l'application
-CMD ["java", "-jar", "/app/gestion-station-ski-1.0.jar"]
+
+# Commande d'exécution
+CMD ["java", "-jar", "/app/ski.jar"]
+
+

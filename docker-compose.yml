@@ -1,7 +1,7 @@
 version: "2.21"
 
 services:
- Farah_Rekik_5SAE3:
+  Farah_Rekik_5SAE3:
     container_name: farah_rekik_5sae3
     image: farahrekik/farah_rekik_5sae3
     ports:

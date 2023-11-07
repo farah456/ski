@@ -25,23 +25,31 @@ public class SubscriptionServicesImpl implements ISubscriptionServices{
 
     @Override
     public Subscription addSubscription(Subscription subscription) {
-        switch (subscription.getTypeSub()) {
-            case ANNUAL:
-                subscription.setEndDate(subscription.getStartDate().plusYears(1));
-                break;
-            case SEMESTRIEL:
-                subscription.setEndDate(subscription.getStartDate().plusMonths(6));
-                break;
-            case MONTHLY:
-                subscription.setEndDate(subscription.getStartDate().plusMonths(1));
-                break;
-        }
+        subscription.setEndDate(calculateEndDate(subscription.getTypeSub(), subscription.getStartDate()));
         return subscriptionRepository.save(subscription);
     }
-
+    private LocalDate calculateEndDate(TypeSubscription type, LocalDate startDate) {
+        switch (type) {
+            case ANNUAL:
+                return startDate.plusYears(1);
+            case SEMESTRIEL:
+                return startDate.plusMonths(6);
+            case MONTHLY:
+                return startDate.plusMonths(1);
+            default:
+                // Handle the case when a new subscription type is introduced or invalid type
+                throw new IllegalArgumentException("Unsupported subscription type: " + type);
+        }
+    }
     @Override
     public Subscription updateSubscription(Subscription subscription) {
+
+        subscription.setEndDate(calculateEndDate(subscription.getTypeSub(), subscription.getStartDate()));
         return subscriptionRepository.save(subscription);
+    }
+    @Override
+    public List<Subscription> getAllSubscriptions() {
+        return (List<Subscription>) subscriptionRepository.findAll();
     }
 
     @Override

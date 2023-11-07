@@ -13,7 +13,9 @@ public interface ISubscriptionServices {
 
 	Subscription updateSubscription(Subscription subscription);
 
-	Subscription retrieveSubscriptionById(Long numSubscription);
+    List<Subscription> getAllSubscriptions();
+
+    Subscription retrieveSubscriptionById(Long numSubscription);
 
 	Set<Subscription> getSubscriptionByType(TypeSubscription type);
 

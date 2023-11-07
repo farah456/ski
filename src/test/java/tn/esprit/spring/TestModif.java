@@ -12,6 +12,7 @@ import tn.esprit.spring.repositories.ISkierRepository;
 import tn.esprit.spring.repositories.ISubscriptionRepository;
 import tn.esprit.spring.services.SubscriptionServicesImpl;
 
+import javax.transaction.Transactional;
 import java.time.LocalDate;
 import java.util.Optional;
 import java.util.logging.Logger;
@@ -19,7 +20,7 @@ import java.util.logging.Logger;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.when;
-
+@Transactional
 @SpringBootTest
 public class TestModif {
     private static final Logger logger = Logger.getLogger(TestModif.class.getName());

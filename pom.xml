@@ -39,6 +39,7 @@
 			<version>4.13.1</version> <!-- or any other JUnit version you prefer -->
 			<scope>test</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-core</artifactId>
@@ -82,6 +83,14 @@
 				</configuration>
 			</plugin>
 		</plugins>
-	</build>
 
+	</build>
+	<profiles>
+		<profile>
+			<id>compile</id>
+			<properties>
+				<spring.profiles.active>compile</spring.profiles.active>
+			</properties>
+		</profile>
+	</profiles>
 </project>

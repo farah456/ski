@@ -1,0 +1,24 @@
+version: "2.21"
+
+services:
+  Farah_Rekik_5SAE3:
+    container_name: farah_rekik_5sae3
+    image: farahrekik/farah_rekik_5sae3
+    ports:
+      - "8090:8089"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db-mysql:3306/stationSki?createDatabaseIfNotExist=true&useSSL=false&max_allowed_packet=15728640
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=
+    restart: unless-stopped
+    depends_on:
+      - db-mysql
+
+  db-mysql:
+    image: "mysql:latest"
+    container_name: db-mysql  
+    environment:
+      - MYSQL_ROOT_PASSWORD=
+    ports:
+      - "3307:3306"
+    restart: unless-stopped

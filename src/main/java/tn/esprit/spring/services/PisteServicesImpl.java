@@ -4,12 +4,19 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.spring.entities.Piste;
 import tn.esprit.spring.repositories.IPisteRepository;
+<<<<<<< HEAD
 import tn.esprit.spring.services.IPisteServices;
+=======
+>>>>>>> 0137712e0cb160fda55f22b91fa794d9f4508ab6
 
 import java.util.List;
 @AllArgsConstructor
 @Service
+<<<<<<< HEAD
 public class PisteServicesImpl implements IPisteServices {
+=======
+public class PisteServicesImpl implements  IPisteServices{
+>>>>>>> 0137712e0cb160fda55f22b91fa794d9f4508ab6
 
     private IPisteRepository pisteRepository;
 

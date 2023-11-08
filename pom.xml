@@ -90,7 +90,7 @@
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 		</dependency>
-<<<<<<< HEAD
+
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
@@ -108,8 +108,7 @@
             <artifactId>spring-boot-test</artifactId>
         </dependency>
 		
-=======
->>>>>>> 0137712e0cb160fda55f22b91fa794d9f4508ab6
+
 
 
 	</dependencies>

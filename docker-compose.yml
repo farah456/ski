@@ -3,7 +3,7 @@ version: '2.3.3'
 services:
   # MySQL database service
   mysql:
-    image: mysqldb
+    image: mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD:
       MYSQL_DATABASE: stationski

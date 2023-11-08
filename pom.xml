@@ -12,7 +12,8 @@
 		<repository>
 			<id>deploymentRepo</id>
 			<name>Nexus Repository</name>
-			<url>http://192.168.43.123:8081/repository/maven-releases/</url>
+			<url>http://192.168.1vagrant
+				.20:8081/repository/maven-releases/</url>
 		</repository>
 	</distributionManagement>
 	<groupId>tn.esprit.spring</groupId>

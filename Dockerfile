@@ -11,3 +11,6 @@ RUN curl -o gestion-station-ski-1.0.jar -u jenkins-user:admin http://192.168.1.3
 
 EXPOSE 8089
 CMD ["java", "-jar", "gestion-station-ski-1.0.jar"]
+
+
+

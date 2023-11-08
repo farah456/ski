@@ -114,14 +114,7 @@
 
 	</dependencies>
 
-	<!-- Deploy to Nexus -->
-	<distributionManagement>
-		<repository>
-			<id>deploymentRepo</id>
-			<name>Nexus Repository</name>
-			<url>http://localhost:8081/repository/farahrekik5sae3/</url>
-		</repository>
-	</distributionManagement>
+	
 
 	<build>
 		<plugins>
@@ -172,6 +165,14 @@
 				</plugins>
 			</pluginManagement>
 	</build>
+	<!-- Deploy to Nexus -->
+	<distributionManagement>
+		<repository>
+			<id>deploymentRepo</id>
+			<name>Nexus Repository</name>
+			<url>http://localhost:8081/repository/farahrekik5sae3/</url>
+		</repository>
+	</distributionManagement>
 
 </project>
 

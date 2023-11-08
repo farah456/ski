@@ -1,4 +1,9 @@
-FROM ubuntu:latest
-LABEL authors="oussama"
+FROM openjdk:11-jre-slim
 
-ENTRYPOINT ["top", "-b"]
+WORKDIR /app
+
+COPY target/gestion-station-ski-1.0.jar .
+
+EXPOSE 8089
+
+CMD ["java", "-jar", "gestion-station-ski-1.0.jar"]

@@ -21,8 +21,8 @@ services:
       - MYSQL_ROOT_PASSWORD=
     ports:
 
-        - "9003:9000"
-        - "9092:9092"
+      - "3307:3306"
+
+      - "3309:3306"
 
     restart: unless-stopped
-

@@ -5,10 +5,11 @@ services:
   mysql:
     image: mysql:5.7
     environment:
-      MYSQL_ROOT_PASSWORD:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
       MYSQL_DATABASE: stationski
     ports:
       - "3307:3307"
+    
     volumes:
       - mysql-data:/var/lib/mysql
 

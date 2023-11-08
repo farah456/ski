@@ -5,7 +5,7 @@ services:
   mysqldb:
     image: mysqldb
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD:
       MYSQL_DATABASE: stationski
     ports:
       - "3306:3306"
@@ -24,9 +24,10 @@ services:
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/stationSki?createDatabaseIfNotExist=true
       SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: root
+      SPRING_DATASOURCE_PASSWORD:
 
 
 
 volumes:
   mysql-data:
+

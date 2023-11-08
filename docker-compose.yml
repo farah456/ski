@@ -2,6 +2,8 @@ version: '2.3.3'
 
 services:
   # MySQL database service
+  networks:
+    - mynetwork
   mysql:
     image: mysql:5.7
     environment:
@@ -16,6 +18,8 @@ services:
   # Spring Boot application service
 
   app:
+    networks:
+      - mynetwork
     image: myapp
     build:
       context: .
@@ -32,3 +36,6 @@ services:
 
 volumes:
   mysql-data:
+
+networks:
+  mynetwork:

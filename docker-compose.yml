@@ -9,7 +9,7 @@ services:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
       MYSQL_DATABASE: stationski
     ports:
-      - "3306:3306"
+      - "3307:3307"
     restart: always
 
     volumes:
@@ -29,7 +29,7 @@ services:
     depends_on:
       - mysql
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/stationSki?createDatabaseIfNotExist=true
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3307/stationSki?createDatabaseIfNotExist=true
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: ""
 

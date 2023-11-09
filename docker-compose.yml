@@ -1,8 +1,8 @@
 version: '2.3.3'
 services:
-  Amine_Teyeb:
-    container_name: myapp
-    image: app
+  ski:
+    container_name: ski
+    image: ski:latest
     ports:
       - "8090:8089"
     environment:

@@ -14,13 +14,8 @@ services:
     volumes:
       - mysql-data:/var/lib/mysql
 
-  
+  # Spring Boot application service
 
-
-  grafana:
-    image: grafana/grafana
-    ports:
-      - "3000:3000"
   app:
 
     image: myapp
